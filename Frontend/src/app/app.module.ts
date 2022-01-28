@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {TabMenuModule} from 'primeng/tabmenu';
@@ -14,8 +15,9 @@ import {ContextMenuModule} from 'primeng/contextmenu';
 import { HttpClientModule } from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
 import {CalendarModule} from 'primeng/calendar';
-
+import { PanelModule }  from 'primeng/panel';
 import {MultiSelectModule} from 'primeng/multiselect';
+import {TabViewModule} from 'primeng/tabview';
 
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
@@ -26,6 +28,11 @@ import { UserAdministrarComponent } from './components/user-administrar/user-adm
 import { FormsModule } from '@angular/forms';
 import { ServerComponent } from './server/server.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SharedModule } from 'primeng/api';
+import {CardModule} from 'primeng/card';
+
+import { InicioComponent } from './components/inicio/inicio.component';
+
 
 
 @NgModule({
@@ -35,6 +42,7 @@ import { FooterComponent } from './components/footer/footer.component';
     UserAdministrarComponent,
     ServerComponent,
     FooterComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +62,13 @@ import { FooterComponent } from './components/footer/footer.component';
     ProgressBarModule,
     InputTextModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PanelModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    CardModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

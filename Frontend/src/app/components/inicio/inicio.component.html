@@ -1,1 +1,40 @@
-<p>Aqui é o começo</p>
+
+<p-panel header="Sobre"  [toggleable]="true">
+    <ng-template pTemplate="icons">
+       <p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+    </ng-template>
+    <p [style]="{'font-size': '1.5em'}">Esta é uma aplicação feita por mim, <a href="https://www.linkedin.com/in/humberto-escorel-154641127/">Humberto Escorel</a>.
+         Ela foi criada com o objetivo de aprender mais sobre a integração do Frontend com o Backend.
+        Vocês podem consultar/copiar os códigos aqui utilizados em meu repósitorio no <a href ="https://github.com/humbertoe1/UserRegistrationApp">GitHub</a>. De maneira geral, é um simples CRUD (Create, Read, Update, Delete) de 
+        Usuarios. Sintam-se a vontade para sugerir qualquer mudança :)
+    </p>
+</p-panel>
+<h1>Abaixo estão as tecnologias que eu decidi utilizar neste projeto!</h1>
+<div class="card">
+    <div class ="card-container">
+<p-card header="Backend" subheader=".NET/ C#" [style]="{width: '360px'}" styleClass="p-card-shadow" class="Cards">
+    <ng-template pTemplate="header">
+        <img alt="Card" src="assets/images/card_dotnet.png">
+    </ng-template>
+    <p>Para o BackEnd eu utilizeri o .NET, com a linguagem de programação C#, ASPNET Core MVC e a EntityFrameworkCore para integração com banco de dados. Além do padrão de projeto
+        MVC citado anteriormente, também utilizei o padrão Repository. </p>
+    
+</p-card>
+
+<p-card header="Frontend" subheader="ANGULAR / PrimeNG" [style]="{width: '360px'}" styleClass="p-card-shadow"class="Cards">
+    <ng-template pTemplate="header">
+        <img alt="Card" src="assets/images/card_primeNG.png">
+    </ng-template>
+    <p>Já para o Frontend, eu resolvi aprender a utilizar a Framework Angular, com os pacotes do PrimeNG. É incrível como essas ferramentas facilitam a vida do desenvolvedor! </p>
+   
+</p-card>
+<p-card header="Database" subheader="SQL Microsoft / SQL Server Management Studio" [style]="{width: '360px'}" styleClass="p-card-shadow"class="Cards">
+    <ng-template pTemplate="header">
+        <img alt="Card" src="assets/images/card_sql.png">
+    </ng-template>
+    <p>Utilizei um banco de dados em SQL com o auxilio do SQL Management Studio da Microsoft!</p>
+   
+</p-card>
+</div>
+</div>
+<p-toast></p-toast>
