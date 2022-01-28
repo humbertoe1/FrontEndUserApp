@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AppExemplo.Models;
-using Microsoft.EntityFrameworkCore;
 using AppExemplo.Data;
 
 namespace AppExemplo.Repository
