@@ -1,7 +1,16 @@
 .user-inputs{
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin:3.0em;
+    font-size: 20px;
+    height: 20px;
 }
 .botao{
-    margin: 10px;
+    margin: 3.0em;
+    font-size: 20px;
+    
+    align-items: center;
+}
+.espaço-para-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

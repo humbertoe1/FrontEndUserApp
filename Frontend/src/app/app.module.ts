@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DockModule} from 'primeng/dock'
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {TabMenuModule} from 'primeng/tabmenu';
@@ -35,6 +36,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ServerComponent,
     FooterComponent,
     InicioComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     BrowserAnimationsModule,
     SharedModule,
     CardModule,
-    TabViewModule
+    TabViewModule,
+    DockModule
   ],
   providers: [],
   bootstrap: [AppComponent]
