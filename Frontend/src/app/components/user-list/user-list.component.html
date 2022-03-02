@@ -2,27 +2,113 @@
 
 <p-contextMenu #cm [model]="items"></p-contextMenu>
 
+<p-toast></p-toast>
+
+<div class ="grid">
+                
+    <div class = "col-6 col-offset-3">Administrar Usuarios </div>
+  </div>
+      
+
+  <div class="grid">
+      
+     <div class = "col-4"> <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Procurar..." />
+      </span></div>
+     <div class = "col-4 col-offset-4"> <button class = "botao-de-new" pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button></div>
+  </div>
+
+<div class="full-container">
+<div  class="conatiner">
 <div class="card">
-    <p-table [value]="users" [contextMenu]="cm" dataKey="code" responsiveLayout="scroll">
+ 
+   
+    <!-- <p-table  #dt [value]="users" [rows]="8" [paginator]="true"  [globalFilterFields]="['name','country.name','representative.name','status']" responsiveLayout="scroll"
+        [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} usuarios" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class ="grid">
+                
+              <div class = "col-2"> <h3 class="m-0">Administrar Usuarios</h3> </div>
+            </div>
+                
+
+            <div class="grid">
+                
+               <div class = "col-1"> <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')" placeholder="Procurar..." />
+                </span></div>
+               <div class = "col-1"> <button class = "botao-de-new" pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button></div>
+            </div>
+            
+            
+           
+        </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Email</th>
-                <th>Editar</th>
-                <th>Excluir</th>
+                <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                
+                <th pSortableColumn="cpf">CPF <p-sortIcon field="cpf"></p-sortIcon></th>
+                <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
+                <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+                <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user>
-            <tr [pContextMenuRow]="user">
-                <td>{{user.id}}</td>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="user"></p-tableCheckbox>
+                </td>
                 <td>{{user.name}}</td>
+                
                 <td>{{user.cpf}}</td>
                 <td>{{user.email}}</td>
-                <td><button pButton type="button" label="Editar" class="p-button-warning" (click)="router.navigate(['user-administrar'])"></button></td>
-                <td><button pButton type="button" label="Deletar" class="p-button-danger" (click)="onRemoverUsuario(user.id)"></button></td>
+                <td>{{user.id}}</td>
+                
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editarUsuario(user)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="onRemoverUsuario(user.id)"></button>
+                </td>
             </tr>
         </ng-template>
-    </p-table>
+        
+    </p-table> -->
+    
 </div>
+</div>
+</div>
+
+<p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" header="Detalhes do Usuario" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+       
+        <div class="field">
+            <label for="name">Nome</label>
+            <input type="text" pInputText id="name" [(ngModel)]="user.name" required autofocus />
+            <small class="p-error" *ngIf="submitted && !user.name">Por favor, digite um nome</small>
+        </div>
+        <div class="field">
+            <label for="cpf">CPF</label>
+            <input type="text" pInputText id="cpf" [(ngModel)]="user.cpf" required autofocus />
+            <small class="p-error" *ngIf="submitted && !user.name">Por favor, digite um cpf</small>
+        </div>
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text" pInputText id="name" [(ngModel)]="user.email" required autofocus />
+            <small class="p-error" *ngIf="submitted && !user.name">Por favor, digite um email</small>
+        </div>
+
+       
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Create" icon="pi pi-check" class="p-button-text" (click)="onCreateUser()"></button>
+    </ng-template>
+</p-dialog>
+
+

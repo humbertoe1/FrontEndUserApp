@@ -1,0 +1,41 @@
+.responsividade{
+    height: 100%;
+    
+    background-color: red;
+}
+
+
+
+
+:host ::ng-deep .p-table{
+    height: 10%;
+    background-color: rgb(187, 109, 14);
+}
+.full-container{
+    display: flex;
+    background-color: aqua;
+    padding: 50px 0px 200px 0px;
+    width: 100%;
+    
+}
+:host ::ng-deep .p-column-resizer-helper{
+    background-color: aqua;
+    
+}
+
+
+.conatiner{
+    display: flex;
+    min-height: 800px;
+    
+    background-color: blue;
+    width: 100%;
+    justify-content:space-around;
+}
+
+
+.card{
+    display:flex;
+    
+    justify-content:space-around;
+}

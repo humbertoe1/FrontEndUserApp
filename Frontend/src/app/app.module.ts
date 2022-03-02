@@ -31,9 +31,18 @@ import { ServerComponent } from './server/server.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from 'primeng/api';
 import {CardModule} from 'primeng/card';
-
+import { FieldsetModule } from 'primeng/fieldset'
 import { InicioComponent } from './components/inicio/inicio.component';
+import { UserAtualizarComponent } from './components/user-atualizar/user-atualizar.component';
+import { UserRegistrarComponent } from './components/user-registrar/user-registrar.component';
+import { BackgroundComponent } from './components/background/background.component';
 
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { ConfirmationService } from 'primeng/api';
+import {OrderListModule} from 'primeng/orderlist';
+import {ToolbarModule} from 'primeng/toolbar';
 
 
 
@@ -45,7 +54,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ServerComponent,
     FooterComponent,
     InicioComponent,
-
+    UserRegistrarComponent,
+    UserAtualizarComponent,
+    BackgroundComponent
+ 
   ],
   imports: [
     BrowserModule,
@@ -72,9 +84,15 @@ import { InicioComponent } from './components/inicio/inicio.component';
     SharedModule,
     CardModule,
     TabViewModule,
-    DockModule
+    DockModule,
+    FieldsetModule,
+    ConfirmPopupModule,
+    OrderListModule,
+    MessageModule,
+    MessagesModule,
+    ToolbarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfirmationService],
+  bootstrap: [AppComponent,BackgroundComponent]
 })
 export class AppModule { }

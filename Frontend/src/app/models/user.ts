@@ -13,8 +13,8 @@ export class User {
 }
 
 export class UserParaCadastro {
-    name!: string;
-    cpf!: string;
-    email!: string;
+    name: string  | undefined;
+    cpf: string  | undefined;
+    email: string  | undefined;
     
 }

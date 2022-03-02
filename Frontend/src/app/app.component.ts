@@ -8,8 +8,10 @@ import {MenuItem} from 'primeng/api';
 })
 export class AppComponent {
   title = 'AppExemplo';
+  
   items: MenuItem[] = [];
   ngOnInit() {
+
     this.items = [
         {label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/'},
         {label: 'Usuários', icon: 'pi pi-fw pi-users', routerLink: '/user-list'},
@@ -17,4 +19,6 @@ export class AppComponent {
     ];
 }
 }
+
+
 

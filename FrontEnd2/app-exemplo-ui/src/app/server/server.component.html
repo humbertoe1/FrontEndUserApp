@@ -1,0 +1,22 @@
+<label>Server Name</label>
+<!-- <input
+tyoe = "text" class="form-control"(input)="onUpdateServerName($event)"> -->
+<input
+type = "text" class="form-control"[(ngModel)]="serverName">
+<p *ngIf="serverCreated; else noServer">{{serverName}}</p>
+<ng-template #noServer>
+    <p>No server created.</p>
+</ng-template>
+<hr>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus == 'online'}">Server with ID {{serverId}} is {{getServerStatus(serverId)}} </p>
+<button class = "btn btn-pimary" style="color: white; background-color: black;" [disabled]="!allowNewServer" [innerText]="allowNewServer" (click)="onCreateServer()"></button>
+<p>{{serverCreation}}</p>
+<hr>
+<p>this will be done for an assignment</p>
+<input
+type = "text" class="form-control"[(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary" style="color: black; background-color: rgb(68, 248, 68);" [disabled]="userName === ''" (click)="onButtonClick()"></button>
+<hr>
+<button class="btn btn-primary" style="color: rgb(0, 0, 255); background-color: rgb(177, 187, 245);"(click)="onDisplayDetailsButtonClick()">Display Details</button>
+<p *ngIf="buttonActivated" [ngStyle]="{backgroundColor: getColorBlue()}">Classified Details: wifi password is 123 How many times: {{howManyTimes}}</p>

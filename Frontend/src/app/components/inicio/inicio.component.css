@@ -1,3 +1,4 @@
+
 h1{
     font-family: Segoe UI;
 }
@@ -19,6 +20,21 @@ h1{
 .Cards{
     display:flex;
     flex-direction: row;
-   
-   
+    transition : all 1s;
+    
+    width: 18%;
+    max-height: 40%;
+}
+.img-container{
+    display: flex;
+    
+    background-color: aqua;
+    
+}
+img{
+    height: 175px;
+    max-height: 100%;
+}
+.Cards:hover{
+    transform: scale(1.2);
 }

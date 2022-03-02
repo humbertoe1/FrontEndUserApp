@@ -1,3 +1,5 @@
+<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+<div class ="page">
 <div class = "espaço-para-cadastro">
  <span class="p-float-label user-inputs">
     <input id="float-input" type="number" pInputText [(ngModel)]="identidade"> 
@@ -21,8 +23,9 @@
 </span>
 
 <div class ="myButtons">
-<p-button label="ADICIONAR USUARIO" icon="pi pi-check" class ="botao" (click)="onCreateUser(nomeDoUser, cadastroPessoaFisica, enderecoDeEmail)"></p-button><br>
+<button pButton pRipple type ="button" label="ADICIONAR USUARIO" class="p-button-sucess botao" (click)="onCreateUser(nomeDoUser, cadastroPessoaFisica, enderecoDeEmail)"></button><br>
 
 <button pButton pRipple type ="button" label="ATUALIZAR USUARIO" class="p-button-warning botao" (click)="onUpdateUser(identidade, nomeDoUser, cadastroPessoaFisica, enderecoDeEmail)"></button>
+</div>
 </div>
 </div>
